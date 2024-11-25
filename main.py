@@ -15,22 +15,22 @@ from lib.utils import hex_str
 
 def parse_args():
     parser = argparse.ArgumentParser(description='MS User Dictionary Toolkit')
-    parser.add_argument('--dat_file', default=None, required=False, help='Path to the DAT file')
-    parser.add_argument('--output_file', default=None, required=False, help='Path to the output file')
+    parser.add_argument('--input', default=None, required=False, help='Path to the DAT file')
+    parser.add_argument('--output', default=None, required=False, help='Path to the output file')
     return parser.parse_args()
 
 def main():
     args = parse_args()
     df = pd.read_csv('char.csv')
     df_pair = pd.read_csv('char-pair.csv')
-    if args.dat_file is None:
+    if args.input is None:
         input_user_dict = None
     else:
-        input_user_dict = UserDict.from_dat_file(args.dat_file)        
+        input_user_dict = UserDict.from_dat_file(args.input)        
     if args.output_file is None:
         output_file = 'user_dict.dat'
     else:
-        output_file = args.output_file
+        output_file = args.output
     user_dict = UserDict()
     user_dict.utctimestamp = int(datetime.now().timestamp())
     if input_user_dict:
