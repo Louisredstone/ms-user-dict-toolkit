@@ -16,7 +16,7 @@ from lib.utils import hex_str
 def parse_args():
     parser = argparse.ArgumentParser(description='MS User Dictionary Toolkit')
     parser.add_argument('--input', default=None, required=False, help='Path to the DAT file')
-    parser.add_argument('--output', default=None, required=False, help='Path to the output file')
+    parser.add_argument('--output', default='new.dat', required=False, help='Path to the output file')
     return parser.parse_args()
 
 def main():
@@ -26,11 +26,8 @@ def main():
     if args.input is None:
         input_user_dict = None
     else:
-        input_user_dict = UserDict.from_dat_file(args.input)        
-    if args.output_file is None:
-        output_file = 'user_dict.dat'
-    else:
-        output_file = args.output
+        input_user_dict = UserDict.from_dat_file(args.input)
+    output_file = args.output
     user_dict = UserDict()
     user_dict.utctimestamp = int(datetime.now().timestamp())
     if input_user_dict:

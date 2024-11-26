@@ -29,7 +29,7 @@
 2. 导出用户自定义短语, 保存为.dat结尾的文件, 例如`user.dat`. 这是为了保存手动定义的短语 (不以`i`开头的短语). 如果为空则无需此步.
 3. 设置字符表, 详见char.csv和char-pair.csv. 
 4. 如果是初次运行, 需要安装一些依赖包, 运行`pip install -r requirements.txt`.
-5. 运行`python main.py --input user.dat --output new.dat`
+5. 运行`python main.py --input user.dat --output new.dat` (如果在第2步中跳过导出, 则直接运行`python main.py --output new.dat`)
 6. 清空原有的自定义短语. (确保你知道自己在做什么!)
 7. 导入新生成的.dat文件.
 8. Enjoy!
