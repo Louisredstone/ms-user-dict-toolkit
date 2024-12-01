@@ -14,3 +14,4 @@
 §,小节号,Section Sign,SEC,用于表示章节或部分。
 ¶,段落号,Pilcrow,PARA,用于表示段落的开始。
 •,实心圆点,Bullet Point,BUL,用于列表中的项目符号。
+⫫,独立,Independent,ndep,表示两个随机变量相互独立(加i构成indep)
